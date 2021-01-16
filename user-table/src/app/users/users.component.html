@@ -1,0 +1,23 @@
+<div class="panel-block my-6 p-6 is-justify-content-space-evenly"  *ngIf="users.length > 0; else noUsers">
+    <table class="table is-bordered is-striped is-narrow is-hoverable" id="users">
+      <thead>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td appHighlighter>{{ user.email }}</td>          
+        </tr>
+      </tbody>
+    </table>
+</div>
+<ng-template #noUsers>
+    <div class="columns">
+      <div class="column">
+        <p class="no-users tag">No Users Available.</p>
+      </div>
+    </div>
+  </ng-template>
